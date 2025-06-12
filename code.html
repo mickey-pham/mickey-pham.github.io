@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" style="color-scheme: dark;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mickey Pham | Personal Portfolio</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts Import for DM Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+
+    <style>
+        /* Basic theme setup to match the original */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #030712; /* Corresponds to gray-950 */
+            color: #d1d5db; /* gray-300 */
+        }
+        
+        /* Apply the new font to the h1 elements */
+        h1 {
+          font-family: 'DM Sans', sans-serif;
+        }
+
+        /* Defines the keyframes for the gradient's continuous scroll */
+        @keyframes gradient-animation {
+            from {
+                background-position: 0% center;
+            }
+            to {
+                background-position: -200% center;
+            }
+        }
+
+        /* This class applies the animation to your text */
+        .animate-gradient {
+            animation: gradient-animation 4s linear infinite;
+        }
+
+        /* Glow effect for the text */
+        @keyframes text-glow {
+            0%, 100% {
+                text-shadow: 
+                0 0 15px rgba(251, 113, 133, 0.5),
+                0 0 25px rgba(251, 146, 60, 0.4),
+                0 0 35px rgba(163, 230, 53, 0.3);
+            }
+            50% {
+                text-shadow: 
+                0 0 25px rgba(251, 113, 133, 0.8),
+                0 0 40px rgba(251, 146, 60, 0.6),
+                0 0 55px rgba(163, 230, 53, 0.5);
+            }
+        }
+
+        .animate-glow {
+            animation: text-glow 3s ease-in-out infinite;
+        }
+
+        /* Replicating custom colors with standard Tailwind equivalents */
+        .bg-primary { background-color: #4f46e5; }
+        .hover\:bg-primary\/90:hover { background-color: #4338ca; }
+        .text-primary { color: #818cf8; }
+        .text-primary-foreground { color: #f9fafb; }
+        .bg-background\/80 { background-color: rgba(3, 7, 18, 0.8); }
+        .bg-card { background-color: #111827; }
+        .border-b { border-color: #374151; }
+        .border { border-color: #374151; }
+        .border-card { border-color: #374151; }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="text-gray-300">
+
+    <div style="display: contents">
+        <!-- Background Gradients and Pattern -->
+        <div class="fixed inset-0 w-full h-screen bg-gradient-to-b from-gray-950 to-indigo-950/40 -z-10">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 40px 40px;"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent opacity-70"></div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center">
+                        <a href="#" class="text-2xl font-bold text-primary mr-8">Mickey Pham</a>
+                        <div class="hidden md:flex items-center space-x-6">
+                            <a href="#" class="text-gray-300 hover:text-primary transition-colors">Home</a>
+                            <a href="#projects" class="text-gray-300 hover:text-primary transition-colors">Projects</a>
+                            <a href="#about" class="text-gray-300 hover:text-primary transition-colors">About</a>
+                            <a href="#contact" class="text-gray-300 hover:text-primary transition-colors">Contact</a>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <a href="#contact" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium h-10 px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200">Contact Me</a>
+                    </div>
+                    <div class="md:hidden">
+                        <button class="text-gray-200 hover:text-primary transition-colors">
+                            <svg width="24" height="24" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="relative min-h-screen pt-16">
+            <div class="container mx-auto px-4">
+
+                <!-- Hero Section -->
+                <section class="flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-center gap-12 min-h-[calc(100vh-4rem)] pt-8 pb-24 text-center lg:text-left">
+                    <div class="flex flex-col max-w-xl lg:max-w-2xl">
+                        <h1 class="text-white text-3xl md:text-5xl font-bold mb-2">Personal Portfolio</h1>
+                        
+                        <h1 class="
+                            animate-gradient
+                            text-8xl 
+                            font-extrabold 
+                            bg-clip-text 
+                            text-transparent 
+                            bg-[linear-gradient(to_right,theme(colors.red.500),theme(colors.orange.500),theme(colors.yellow.400),theme(colors.green.500),theme(colors.blue.500),theme(colors.indigo.500),theme(colors.violet.500),theme(colors.red.500))] 
+                            bg-[length:200%_auto]
+                            leading-tight 
+                            pb-6
+                        ">
+                            Mickey Pham
+                        </h1>
+                        
+                        <p class="text-base md:text-lg lg:text-xl text-gray-300/90">
+                            Computer Engineering student with a passion for building innovative personal projects.
+                        </p>
+                    </div>
+                    <div class="mt-8 lg:mt-0">
+                        <img src="https://i.pinimg.com/736x/af/ad/dd/afaddde7d66eb98bbb3151c4d2ae5ced.jpg" alt="Portrait of Mickey Pham" class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full shadow-2xl shadow-indigo-900/50 border-4 border-indigo-500/30">
+                    </div>
+                </section>
+
+                <!-- Projects Section -->
+                <section id="projects" class="py-24">
+                    <h2 class="text-4xl font-bold text-center mb-12 text-white">My Projects</h2>
+                    <div class="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <!-- Project Card 1 -->
+                        <div class="bg-card text-card-foreground rounded-lg border border-card shadow-lg flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Project Nova screenshot" class="rounded-t-lg w-full h-48 object-cover">
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="text-xl font-semibold leading-none tracking-tight text-white mb-2">Project Nova</h3>
+                                <p class="text-sm flex-grow">A responsive social media dashboard built with React, providing real-time analytics and user engagement tracking.</p>
+                                <div class="my-4">
+                                    <h4 class="font-semibold text-sm mb-2 text-white/80">Technologies Used:</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="select-none rounded-full bg-gray-800 border border-gray-700 px-2.5 py-0.5 text-xs font-semibold">React</span>
+                                        <span class="select-none rounded-full bg-gray-800 border border-gray-700 px-2.5 py-0.5 text-xs font-semibold">Node.js</span>
+                                        <span class="select-none rounded-full bg-gray-800 border border-gray-700 px-2.5 py-0.5 text-xs font-semibold">Chart.js</span>
+                                        <span class="select-none rounded-full bg-gray-800 border border-gray-700 px-2.5 py-0.5 text-xs font-semibold">MongoDB</span>
+                                    </div>
+                                </div>
+                                <div class="mt-auto pt-4 flex gap-4">
+                                    <a href="#" class="w-full text-center rounded-md px-3 py-2 text-sm font-medium bg-indigo-600 text-white hover:bg-indigo-700 transition-colors">Live Demo</a>
+                                    <a href="https://github.com/mickey-pham" target="_blank" rel="noopener noreferrer" class="w-full text-center rounded-md px-3 py-2 text-sm font-medium border border-gray-600 hover:bg-gray-700 transition-colors">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 2 -->
+                        <div class="bg-card text-card-foreground rounded-lg border border-card shadow-lg flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?q=80&w=2072&auto=format&fit=crop" alt="ShopSphere screenshot" class="rounded-t-lg w-full h-48 object-cover">
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="text-xl font-semibold leading-none tracking-tight text-white mb-2">ShopSphere</h3>
+                                <p class="text-sm flex-grow">A full-featured e-commerce platform with Stripe integration for payments and a custom admin panel for product management.</p>
+                                <div class="my-4">
+                                    <h4 class="font-semibold text-sm mb-2 text-white/80">Technologies Used:</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="select-none rounded-full bg-gray-800 border border-gray-700 px-2.5 py-0.5 text-xs font-semibold">Next.js</span>
+                                        <span class="select-none rounded-full bg-gray-800 border border-gray-700 px-2.5 py-0.5 text-xs font-semibold">Stripe</span>
+                                        <span class="select-none rounded-full bg-gray-800 border border-gray-700 px-2.5 py-0.5 text-xs font-semibold">PostgreSQL</span>
+                                        <span class="select-none rounded-full bg-gray-800 border border-gray-700 px-2.5 py-0.5 text-xs font-semibold">Tailwind CSS</span>
+                                    </div>
+                                </div>
+                                <div class="mt-auto pt-4 flex gap-4">
+                                    <a href="#" class="w-full text-center rounded-md px-3 py-2 text-sm font-medium bg-indigo-600 text-white hover:bg-indigo-700 transition-colors">Live Demo</a>
+                                    <a href="https://github.com/mickey-pham" target="_blank" rel="noopener noreferrer" class="w-full text-center rounded-md px-3 py-2 text-sm font-medium border border-gray-600 hover:bg-gray-700 transition-colors">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 3 -->
+                        <div class="bg-card text-card-foreground rounded-lg border border-card shadow-lg flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&w=2106&auto=format&fit=crop" alt="CodeCollab screenshot" class="rounded-t-lg w-full h-48 object-cover">
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="text-xl font-semibold leading-none tracking-tight text-white mb-2">CodeCollab</h3>
+                                <p class="text-sm flex-grow">A real-time collaborative code editor using WebSockets, allowing multiple users to code together simultaneously.</p>
+                                <div class="my-4">
+                                    <h4 class="font-semibold text-sm mb-2 text-white/80">Technologies Used:</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="select-none rounded-full bg-gray-800 border border-gray-700 px-2.5 py-0.5 text-xs font-semibold">Vue.js</span>
+                                        <span class="select-none rounded-full bg-gray-800 border border-gray-700 px-2.5 py-0.5 text-xs font-semibold">Express</span>
+                                        <span class="select-none rounded-full bg-gray-800 border border-gray-700 px-2.5 py-0.5 text-xs font-semibold">Socket.IO</span>
+                                        <span class="select-none rounded-full bg-gray-800 border border-gray-700 px-2.5 py-0.5 text-xs font-semibold">Docker</span>
+                                    </div>
+                                </div>
+                                <div class="mt-auto pt-4 flex gap-4">
+                                    <a href="#" class="w-full text-center rounded-md px-3 py-2 text-sm font-medium bg-indigo-600 text-white hover:bg-indigo-700 transition-colors">Live Demo</a>
+                                    <a href="https://github.com/mickey-pham" target="_blank" rel="noopener noreferrer" class="w-full text-center rounded-md px-3 py-2 text-sm font-medium border border-gray-600 hover:bg-gray-700 transition-colors">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- About Section -->
+                <section id="about" class="py-24">
+                    <h2 class="text-4xl font-bold text-center mb-12 text-white">About Me</h2>
+                    <div class="max-w-5xl mx-auto lg:flex lg:gap-12 items-start">
+                        <!-- Left Column: Text -->
+                        <div class="lg:w-2/3 text-lg text-gray-300/90 space-y-6 text-center lg:text-left">
+                            <p>
+                                As a Computer Engineering student, I have a deep passion for the intersection of hardware and software. My journey in tech began with a curiosity for how things work, which has evolved into a drive to build efficient, user-centric applications and systems.
+                            </p>
+                            <p>
+                                I thrive on solving complex problems and am always eager to learn new technologies. Whether it's designing a responsive front-end, architecting a robust back-end, or tinkering with microcontrollers, I'm committed to writing clean, scalable, and well-documented code.
+                            </p>
+                        </div>
+                        <!-- Right Column: Skills -->
+                        <div class="lg:w-1/3 mt-12 lg:mt-0">
+                            <h3 class="text-2xl font-bold text-white mb-6 text-center lg:text-left">My Skills</h3>
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="font-semibold text-white/80 mb-3">Languages</h4>
+                                    <div class="flex flex-wrap gap-2 justify-center lg:justify-start">
+                                        <span class="select-none rounded-full bg-gray-800 border border-gray-700 px-3 py-1 text-sm font-semibold">JavaScript</span>
+                                        <span class="select-none rounded-full bg-gray-800 border border-gray-700 px-3 py-1 text-sm font-semibold">Python</span>
+                                        <span class="select-none rounded-full bg-gray-800 border border-gray-700 px-3 py-1 text-sm font-semibold">C++</span>
+                                        <span class="select-none rounded-full bg-gray-800 border border-gray-700 px-3 py-1 text-sm font-semibold">HTML/CSS</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white/80 mb-3">Frameworks & Libraries</h4>
+                                    <div class="flex flex-wrap gap-2 justify-center lg:justify-start">
+                                        <span class="select-none rounded-full bg-gray-800 border border-gray-700 px-3 py-1 text-sm font-semibold">React</span>
+                                        <span class="select-none rounded-full bg-gray-800 border border-gray-700 px-3 py-1 text-sm font-semibold">Next.js</span>
+                                        <span class="select-none rounded-full bg-gray-800 border border-gray-700 px-3 py-1 text-sm font-semibold">Node.js</span>
+                                        <span class="select-none rounded-full bg-gray-800 border border-gray-700 px-3 py-1 text-sm font-semibold">Tailwind CSS</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white/80 mb-3">Tools & Platforms</h4>
+                                    <div class="flex flex-wrap gap-2 justify-center lg:justify-start">
+                                        <span class="select-none rounded-full bg-gray-800 border border-gray-700 px-3 py-1 text-sm font-semibold">Git & GitHub</span>
+                                        <span class="select-none rounded-full bg-gray-800 border border-gray-700 px-3 py-1 text-sm font-semibold">Docker</span>
+                                        <span class="select-none rounded-full bg-gray-800 border border-gray-700 px-3 py-1 text-sm font-semibold">MongoDB</span>
+                                        <span class="select-none rounded-full bg-gray-800 border border-gray-700 px-3 py-1 text-sm font-semibold">PostgreSQL</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Final CTA -->
+                <section id="contact" class="py-24 text-center">
+                    <h2 class="text-3xl font-bold text-white mb-4">Check out my projects on GitHub!</h2>
+                    <p class="max-w-2xl mx-auto mb-8">Feel free to explore my work or get in touch with me directly at quocan@my.yorku.ca.</p>
+                    <a href="https://github.com/mickey-pham" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium transition-colors h-10 border border-gray-600 bg-gray-900 hover:bg-gray-800 hover:text-gray-100 text-lg p-6 text-white">
+                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
+                        Explore My Work on GitHub
+                    </a>
+                </section>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
